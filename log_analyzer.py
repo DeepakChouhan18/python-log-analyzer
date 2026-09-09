@@ -5,12 +5,6 @@ log_counts = {
 }
 
 error_messages = {}
-if error_messages:
-    most_common_error = max(error_messages, key=error_messages.get)
-
-    print("\nMost common error:")
-    print(most_common_error)
-    print("Occurrences:", error_messages[most_common_error])
 
 with open("sample.log", "r") as file:
     for line in file:
@@ -37,3 +31,10 @@ print("ERROR:", log_counts["ERROR"])
 print("\nError messages:")
 for error, count in error_messages.items():
     print(error, ":", count)
+
+if error_messages:
+    most_common_error = max(error_messages, key=error_messages.get)
+
+    print("\nMost common error:")
+    print(most_common_error)
+    print("Occurrences:", error_messages[most_common_error])
