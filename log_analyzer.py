@@ -9,6 +9,7 @@ ip_counts = {}
 
 with open("sample.log", "r") as file:
     for line in file:
+
         if "INFO" in line:
             log_counts["INFO"] += 1
 
@@ -18,20 +19,21 @@ with open("sample.log", "r") as file:
         elif "ERROR" in line:
             log_counts["ERROR"] += 1
 
-                        if "IP:" in line:
-                ip = line.split("IP:", 1)[1].strip()
-            
-                if ip in ip_counts:
-                    ip_counts[ip] += 1
-                else:
-                    ip_counts[ip] = 1
-
             error_message = line.split("ERROR", 1)[1].strip()
 
             if error_message in error_messages:
                 error_messages[error_message] += 1
             else:
                 error_messages[error_message] = 1
+
+        if "IP:" in line:
+            ip = line.split("IP:", 1)[1].strip()
+
+            if ip in ip_counts:
+                ip_counts[ip] += 1
+            else:
+                ip_counts[ip] = 1
+
 
 print("INFO:", log_counts["INFO"])
 print("WARNING:", log_counts["WARNING"])
