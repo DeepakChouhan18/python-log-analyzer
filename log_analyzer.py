@@ -18,6 +18,14 @@ with open("sample.log", "r") as file:
         elif "ERROR" in line:
             log_counts["ERROR"] += 1
 
+                        if "IP:" in line:
+                ip = line.split("IP:", 1)[1].strip()
+            
+                if ip in ip_counts:
+                    ip_counts[ip] += 1
+                else:
+                    ip_counts[ip] = 1
+
             error_message = line.split("ERROR", 1)[1].strip()
 
             if error_message in error_messages:
@@ -39,3 +47,7 @@ if error_messages:
     print("\nMost common error:")
     print(most_common_error)
     print("Occurrences:", error_messages[most_common_error])
+
+print("\nIP addresses:")
+for ip, count in ip_counts.items():
+    print(ip, ":", count)
