@@ -53,3 +53,6 @@ if error_messages:
 print("\nIP addresses:")
 for ip, count in ip_counts.items():
     print(ip, ":", count)
+
+total_logs = sum(log_counts.values())
+print("\nTotal logs:", total_logs)
