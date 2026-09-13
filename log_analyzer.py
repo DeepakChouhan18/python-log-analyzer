@@ -8,7 +8,7 @@ def analyze_log(filename):
     error_messages = {}
     ip_counts = {}
     
-    with open("sample.log", "r") as file:
+    with open(filename, "r") as file:
         for line in file:
     
             if "INFO" in line:
