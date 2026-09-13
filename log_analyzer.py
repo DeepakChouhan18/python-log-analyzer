@@ -57,3 +57,6 @@ def analyze_log(filename):
     
     total_logs = sum(log_counts.values())
     print("\nTotal logs:", total_logs)
+
+
+analyze_log("sample.log")
