@@ -64,9 +64,9 @@ result = analyze_log("sample.log")
 print("\nReturned result:")
 print(result)
 
-return {
-    "log_counts": log_counts,
-    "error_messages": error_messages,
-    "ip_counts": ip_counts,
-    "total_logs": total_logs
-}
+    return {
+        "log_counts": log_counts,
+        "error_messages": error_messages,
+        "ip_counts": ip_counts,
+        "total_logs": total_logs
+    }
