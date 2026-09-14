@@ -60,3 +60,10 @@ def analyze_log(filename):
 
 
 analyze_log("sample.log")
+
+return {
+    "log_counts": log_counts,
+    "error_messages": error_messages,
+    "ip_counts": ip_counts,
+    "total_logs": total_logs
+}
