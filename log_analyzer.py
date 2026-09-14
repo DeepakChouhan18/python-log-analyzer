@@ -59,7 +59,10 @@ def analyze_log(filename):
     print("\nTotal logs:", total_logs)
 
 
-analyze_log("sample.log")
+result = analyze_log("sample.log")
+
+print("\nReturned result:")
+print(result)
 
 return {
     "log_counts": log_counts,
