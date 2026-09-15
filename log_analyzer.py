@@ -9,11 +9,7 @@ def analyze_log(filename):
     ip_counts = {}
 
     try:
-        with open(filename, "r") as file:
-            for line in file:
-
-        
-        with open(filename, "r") as file:
+            with open(filename, "r") as file:
             for line in file:
 
                 if "INFO" in line:
