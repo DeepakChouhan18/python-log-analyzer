@@ -12,6 +12,10 @@ def analyze_log(filename):
         with open(filename, "r") as file:
             for line in file:
 
+        
+        with open(filename, "r") as file:
+            for line in file:
+
                 if "INFO" in line:
                     log_counts["INFO"] += 1
 
