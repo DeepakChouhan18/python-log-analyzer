@@ -9,6 +9,37 @@ def analyze_log(filename):
     ip_counts = {}
 
     with open(filename, "r") as file:
+        try:
+    with open(filename, "r") as file:
+        for line in file:
+
+            if "INFO" in line:
+                log_counts["INFO"] += 1
+
+            elif "WARNING" in line:
+                log_counts["WARNING"] += 1
+
+            elif "ERROR" in line:
+                log_counts["ERROR"] += 1
+
+                error_message = line.split("ERROR", 1)[1].strip()
+
+                if error_message in error_messages:
+                    error_messages[error_message] += 1
+                else:
+                    error_messages[error_message] = 1
+
+            if "IP:" in line:
+                ip = line.split("IP:", 1)[1].strip()
+
+                if ip in ip_counts:
+                    ip_counts[ip] += 1
+                else:
+                    ip_counts[ip] = 1
+
+except FileNotFoundError:
+    print("Error: Log file not found.")
+    return None
         for line in file:
 
             if "INFO" in line:
