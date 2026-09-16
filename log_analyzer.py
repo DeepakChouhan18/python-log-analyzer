@@ -1,4 +1,6 @@
 import sys
+
+
 def analyze_log(filename):
     log_counts = {
         "INFO": 0,
@@ -10,7 +12,7 @@ def analyze_log(filename):
     ip_counts = {}
 
     try:
-            with open(filename, "r") as file:
+        with open(filename, "r") as file:
             for line in file:
 
                 if "INFO" in line:
@@ -81,6 +83,3 @@ else:
 
     print("\nReturned result:")
     print(result)
-
-print("\nReturned result:")
-print(result)
