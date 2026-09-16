@@ -1,3 +1,4 @@
+import sys
 def analyze_log(filename):
     log_counts = {
         "INFO": 0,
