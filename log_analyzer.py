@@ -74,7 +74,13 @@ def analyze_log(filename):
     }
 
 
-result = analyze_log("sample.log")
+if len(sys.argv) < 2:
+    print("Please provide a log file.")
+else:
+    result = analyze_log(sys.argv[1])
+
+    print("\nReturned result:")
+    print(result)
 
 print("\nReturned result:")
 print(result)
