@@ -1,6 +1,27 @@
 import sys
 
+def print_report(result):
+    if result is None:
+        return
 
+    print("\n========== LOG REPORT ==========")
+
+    print("Total logs:", result["total_logs"])
+
+    print("\nLog levels:")
+    for level, count in result["log_counts"].items():
+        print(level, ":", count)
+
+    print("\nError messages:")
+    for error, count in result["error_messages"].items():
+        print(error, ":", count)
+
+    print("\nIP addresses:")
+    for ip, count in result["ip_counts"].items():
+        print(ip, ":", count)
+
+    print("================================")
+    
 def analyze_log(filename):
     log_counts = {
         "INFO": 0,
