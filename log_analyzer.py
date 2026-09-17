@@ -101,6 +101,5 @@ if len(sys.argv) < 2:
     print("Please provide a log file.")
 else:
     result = analyze_log(sys.argv[1])
-
-    print("\nReturned result:")
-    print(result)
+    print_report(result)
+    
