@@ -74,30 +74,7 @@ def analyze_log(filename):
         print("Error: Log file not found.")
         return None
 
-    print("INFO:", log_counts["INFO"])
-    print("WARNING:", log_counts["WARNING"])
-    print("ERROR:", log_counts["ERROR"])
-
-    print("\nError messages:")
-    for error, count in error_messages.items():
-        print(error, ":", count)
-
-    if error_messages:
-        most_common_error = max(
-            error_messages,
-            key=error_messages.get
-        )
-
-        print("\nMost common error:")
-        print(most_common_error)
-        print("Occurrences:", error_messages[most_common_error])
-
-    print("\nIP addresses:")
-    for ip, count in ip_counts.items():
-        print(ip, ":", count)
-
-    total_logs = sum(log_counts.values())
-    print("\nTotal logs:", total_logs)
+    
 
     return {
         "log_counts": log_counts,
