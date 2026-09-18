@@ -16,6 +16,16 @@ def print_report(result):
     for error, count in result["error_messages"].items():
         print(error, ":", count)
 
+    if result["error_messages"]:
+    most_common_error = max(
+        result["error_messages"],
+        key=result["error_messages"].get
+    )
+
+    print("\nMost common error:")
+    print(most_common_error)
+    print("Occurrences:", result["error_messages"][most_common_error])
+
     print("\nIP addresses:")
     for ip, count in result["ip_counts"].items():
         print(ip, ":", count)
