@@ -29,6 +29,11 @@ def print_report(result):
     print("\nIP addresses:")
     for ip, count in result["ip_counts"].items():
         print(ip, ":", count)
+        print("\nSuspicious IPs:")
+
+for ip, count in result["ip_counts"].items():
+    if count >= 3:
+        print(ip, "->", count, "requests")
 
     print("================================")
     
