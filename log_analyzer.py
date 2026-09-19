@@ -1,5 +1,6 @@
 import sys
 
+
 def print_report(result):
     if result is None:
         return
@@ -17,26 +18,27 @@ def print_report(result):
         print(error, ":", count)
 
     if result["error_messages"]:
-    most_common_error = max(
-        result["error_messages"],
-        key=result["error_messages"].get
-    )
+        most_common_error = max(
+            result["error_messages"],
+            key=result["error_messages"].get
+        )
 
-    print("\nMost common error:")
-    print(most_common_error)
-    print("Occurrences:", result["error_messages"][most_common_error])
+        print("\nMost common error:")
+        print(most_common_error)
+        print("Occurrences:", result["error_messages"][most_common_error])
 
     print("\nIP addresses:")
     for ip, count in result["ip_counts"].items():
         print(ip, ":", count)
-        print("\nSuspicious IPs:")
 
-for ip, count in result["ip_counts"].items():
-    if count >= 3:
-        print(ip, "->", count, "requests")
+    print("\nSuspicious IPs:")
+    for ip, count in result["ip_counts"].items():
+        if count >= 3:
+            print(ip, "->", count, "requests")
 
     print("================================")
-    
+
+
 def analyze_log(filename):
     log_counts = {
         "INFO": 0,
@@ -79,7 +81,7 @@ def analyze_log(filename):
         print("Error: Log file not found.")
         return None
 
-    
+    total_logs = sum(log_counts.values())
 
     return {
         "log_counts": log_counts,
@@ -94,4 +96,3 @@ if len(sys.argv) < 2:
 else:
     result = analyze_log(sys.argv[1])
     print_report(result)
-    
