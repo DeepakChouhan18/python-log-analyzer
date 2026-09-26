@@ -8,6 +8,12 @@ def print_report(result):
     print("\n========== LOG REPORT ==========")
 
     print("Total logs:", result["total_logs"])
+    if result["total_logs"] > 0:
+    print("\nLog percentages:")
+
+    for level, count in result["log_counts"].items():
+        percentage = (count / result["total_logs"]) * 100
+        print(level, ":", round(percentage, 2), "%")
 
     print("\nLog levels:")
     for level, count in result["log_counts"].items():
